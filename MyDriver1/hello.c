@@ -5,12 +5,13 @@
 #pragma warning(disable: 4100)
 
 DRIVER_INITIALIZE DriverEntry;
+DRIVER_ADD_DEVICE spAddDevice;
 
 NTSTATUS DriverEntry(IN PDRIVER_OBJECT DriverObject,IN PUNICODE_STRING RegistryPath)
 {
 	DbgPrint("Driver Entry loaded\n");
 
-	DriverObject->DriverExtension->AddDevice = spAddDevice;
+//	DriverObject->DriverExtension->AddDevice = spAddDevice;
 
 	return STATUS_SUCCESS;
 }
